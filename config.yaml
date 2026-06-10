@@ -1,0 +1,37 @@
+# config.yaml
+mlflow:
+  tracking_username: "haniaruby"
+  tracking_password_file_env: "MLFLOW_TRACKING_PASSWORD" # Tracked via environment variable for security
+  tracking_uri: "https://dagshub.com/haniaruby/nlp-intelligence-system.mlflow"
+  experiment_name: "nlp-contrastive-analysis"
+
+data:
+  amazon:
+    path: "data/raw/amazon-fine-foods/Reviews.csv"
+  sentiment140:
+    path: "data/raw/sentiment/training.1600000.processed.noemoticon.csv"
+  sample_size: 20000
+  test_size: 0.2
+  random_state: 42
+
+features:
+  max_features: 5000
+
+model:
+  max_iter: 1000
+
+search:
+  top_k: 2
+  static_corpus:
+    - text: "I loved this organic dark roast coffee, tasted amazing and had a rich bold finish!"
+      sentiment: "positive"
+    - text: "Terrible service, the food packaging arrived completely smashed, cold, and stale."
+      sentiment: "negative"
+    - text: "Great customer support, but the snack variety pack was missing a few items."
+      sentiment: "negative"
+    - text: "This sweet organic tea is the absolute best beverage I have ever bought online."
+      sentiment: "positive"
+    - text: "hate traffic. sitting in my car stuck on the highway home. so annoying."
+      sentiment: "negative"
+    - text: "just had an awesome day at the beach with friends! sun is shining bright!"
+      sentiment: "positive"
